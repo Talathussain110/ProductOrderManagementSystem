@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "cli": {
+    "warnings": {
+      "versionMismatch": false
+    },
+    "analytics": false
+  }
+}
