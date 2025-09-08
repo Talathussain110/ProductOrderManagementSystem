@@ -7,25 +7,26 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Product;
 
+
 @Repository
 public class ProductRepository {
 
+    private static final String TEMPORARY_IMPLEMENTATION = "Temporary implementation";
+
     public List<Product> findAll() {
-        
-        return null;
+        throw new UnsupportedOperationException(TEMPORARY_IMPLEMENTATION);
     }
 
     public Optional<Product> findById(long id) {
-        
-        return Optional.empty();
+        throw new UnsupportedOperationException(TEMPORARY_IMPLEMENTATION);
     }
 
     public Product save(Product product) {
-        
-        return null;
+        throw new UnsupportedOperationException(TEMPORARY_IMPLEMENTATION);
     }
 
-    public void deleteById(long id) {
-        
-    }
+	public void deleteById(long id) {
+		throw new UnsupportedOperationException(TEMPORARY_IMPLEMENTATION);
+		
+	}
 }
