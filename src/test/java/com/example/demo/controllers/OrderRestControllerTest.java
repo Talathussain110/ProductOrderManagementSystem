@@ -5,25 +5,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(controllers = OrderRestController.class)
-public class OrderRestControllerTest {
+class OrderRestControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+	@Autowired
+	private MockMvc mvc;
 
-    @Test
-    public void testAllOrdersEmpty() throws Exception {
-        this.mvc.perform(get("/api/orders")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().json("[]"));
-    }
+	@Test
+	void testAllOrdersEmpty() throws Exception {
+		mvc.perform(get("/api/orders").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andExpect(content().json("[]"));
+	}
 }
